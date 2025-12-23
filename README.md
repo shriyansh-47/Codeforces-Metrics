@@ -3,7 +3,8 @@
 A **Streamlit-based dashboard** that analyzes and visualizes a Codeforces user's competitive programming profile using real-time data from the **Codeforces API**.
 
 ---
-
+- ▶️ Live Demo : https://cfmetrices.streamlit.app/
+---
 ## 🚀 Features
 
 - User profile overview (rating, rank, country, organization)
@@ -24,9 +25,6 @@ A **Streamlit-based dashboard** that analyzes and visualizes a Codeforces user's
 - Codeforces Public API
 
 ---
-
-## ▶️ Live Demo
-https://your-live-link-here
 
 ## ⚙️ Run Locally (Optional)
 
