@@ -12,11 +12,13 @@ def input_username():
     username = st.sidebar.text_input("Enter your C.F. Username")
     if st.sidebar.button("Submit"):
         if username:
-            fetch_data(username)
+            data = fetch_data(username)
+            if data != None:
+                display(*data) #Unpacking the tuple received from fetch_data()
         else:
             st.sidebar.error("Atleast type something man")
 
-#st.cache_data(ttl=300)
+@st.cache_data(ttl=300) #Caching the returned value of fetch_data(), the value remains in cache for 300sec, reduces the number of API req.
 def fetch_data(username):
     info_url = "https://codeforces.com/api/user.info"
     rating_url = "https://codeforces.com/api/user.rating"
@@ -31,9 +33,7 @@ def fetch_data(username):
     rating_data = rq.get(rating_url, params={"handle":username}).json()
     submission_data = rq.get(submission_url,params={"handle":username, "from":1}).json()
 
-    display(info_process(info_data),
-    rating_process(rating_data),
-    submission_process(submission_data))
+    return (info_process(info_data), rating_process(rating_data), submission_process(submission_data))
 
 def info_process(info):
     user = info["result"][0]
@@ -244,6 +244,7 @@ def display(user,rating,sub):
             with c3:
                 st.image("https://media.tenor.com/HUz1LwDn_lAAAAAM/smile.gif",
                          width=200)
+
 
 
 def main():
