@@ -25,26 +25,14 @@ A **Streamlit-based dashboard** that analyzes and visualizes a Codeforces user's
 
 ---
 
-## ⚙️ Setup Instructions
+## ▶️ Live Demo
+https://your-live-link-here
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/codeforces-metrics.git
-cd codeforces-metrics
-```
+## ⚙️ Run Locally (Optional)
 
-### 2️⃣ Install Dependencies
 ```bash
-pip install streamlit requests pandas
-```
-
-### 3️⃣ Run the Application
-```bash
+pip install -r requirements.txt
 streamlit run app.py
-```
-
-The app will be available at:
-```
 ```
 
 ---
@@ -61,14 +49,6 @@ The app will be available at:
 
 ---
 
-## 📌 Notes
-
-- Uses public Codeforces APIs
-- APIs are rate-limited, avoid excessive refreshes
-- Optional caching:
-```python
-@st.cache_data(ttl=300)
-```
 
 ## 🧑‍💻 Author
 
